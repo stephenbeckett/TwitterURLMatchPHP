@@ -215,14 +215,7 @@ class twitterURLMatch {
 	 * @returns UTF-8 encoded character
 	 */
 	protected function fromCode ($code) {	
-		$htmlCode = dechex($code);
-		$zerosNeeded = 4-strlen($htmlCode);
-		
-		for ($i = 0; $i < $zerosNeeded; $i++) {
-			$htmlCode = '0'.$htmlCode;
-		}
-		
-		return mb_convert_encoding("&#x$htmlCode;", 'UTF-8', 'HTML-ENTITIES');
+		return mb_convert_encoding('&#x'.str_pad(dechex($code), 4, '0', STR_PAD_LEFT).';', 'UTF-8', 'HTML-ENTITIES');
 	}
 	
 	/**
