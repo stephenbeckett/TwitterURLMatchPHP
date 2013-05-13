@@ -1,0 +1,39 @@
+	twitterURLMatch v1.0 by Stephen Beckett, stevebeckett.com
+
+	--- LICENSE ---
+	
+	Copyright 2013 Stephen Beckett (http://www.stevebeckett.com, steve@stevebeckett.com)
+	
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+	
+		http://www.apache.org/licenses/LICENSE-2.0
+	
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+	
+	--- ABOUT ---
+	
+	A stripped down PHP implementation of the URL matching features in 
+	the Twitter Javascript library. Useful if you want to post arbitrary
+	length URLs to Twitter's API that could get shortened to t.co URLs.
+	
+	Features:
+	* Find URLs in strings exactly like Twitter, yay!
+	* Fully UTF-8 compatible! Brilliant!
+	
+	Based on May 07th 2013 version of twitter-text:
+	https://github.com/twitter/twitter-text-js/blob/8fc58b631d6f56ca1817d4aedb60d214f2df770b/twitter-text.js
+	
+	PHP v5.4+ requried for anonymous functions (with $this calls) in regexSupplant() and stringSupplant().
+	If that's a problem you could rewrite the functions to use regular callbacks:
+	http://php.net/manual/en/language.types.callable.php
+	
+	--- USAGE ---
+	
+	Just call:
+	match($query, $withIndicies = true);
